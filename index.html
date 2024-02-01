@@ -27,6 +27,186 @@ Grade	GPA
   </head>
 
   <body>
-    
+    <div class="row">
+	<form>
+		<div class="column w3-white"><!-- section for form input left panel starts here-->
+			<header class="w3-container w3-blue">
+				<h3>Enter Your Information</h3>
+			</header>
+			<div class="w3-container  w3-white">
+
+					<div style="overflow-x: auto;">
+					<table>
+							<tr><td><strong>Student Name:</strong></td><td><input type="text" id="nameElement"
+									title="Enter a student name"/><a href="help.html#q001" target="_new"  class="help">&nbsp;?&nbsp;</a>
+									<span id="nameError" style="color:red"></span>
+								</td></tr>
+									
+							
+							<tr><td><strong>Grade:</strong></td><td><input type="text" id="gradeElement"
+									title="Enter grade" />
+									<span id="inputError" style="color:red"></span>
+								</td></tr>
+					</table>
+					<hr width="95%"/>
+						<table>	
+							<thead>
+								<tr>
+									<th>COURSE</th>
+									<th>CREDITS</th>								
+									<th>GRADE</th>
+									<th>COURSE TYPE</th>
+								</tr>
+							</thead>
+							<tbody id="courseTableBody">
+								<tr>
+									<td><input type="text" id="course1" title="Enter a course name" ></td>
+									<td><select id="credit1" class="creditInput"></select></td>
+									<td><select id="grade1" class="gradeInput"></select> <a
+										href="help.html#q003" target="_new" class="help">&nbsp;?&nbsp;</a></td>
+									<td><select id="weight1" class="weightInput"></select></td>
+								</tr>
+
+								<tr>
+									<td><input type="text" id="course2" title="Enter a course name" ></td>
+									<td><select id="credit2" class="creditInput"></select></td>
+									<td><select id="grade2" class="gradeInput"></select></td>
+									<td><select id="weight2" class="weightInput"></select></td>
+								</tr>
+
+								<tr>
+									<td><input type="text" id="course3" title="Enter a course name"></td>
+									<td><select id="credit3" class="creditInput"></select></td>
+									<td><select id="grade3" class="gradeInput"></select></td>
+									<td><select id="weight3" class="weightInput"></select></td>
+								</tr>
+
+								<tr>
+									<td><input type="text" id="course4" title="Enter a course name"></td>
+									<td><select id="credit4" class="creditInput"></select></td>
+									<td><select id="grade4" class="gradeInput"></select></td>
+									<td><select id="weight4" class="weightInput"></select></td>
+								</tr>
+
+								<tr>
+									<td><input type="text" id="course5" title="Enter a course name"></td>
+									<td><select id="credit5" class="creditInput"></select></td>
+									<td><select id="grade5" class="gradeInput"></select></td>
+									<td><select id="weight5" class="weightInput"></select></td>
+								</tr>
+
+								<tr>
+									<td><input type="text" id="course6" title="Enter a course name"></td>
+									<td><select id="credit6" class="creditInput"></select></td>
+									<td><select id="grade6" class="gradeInput"></select></td>
+									<td><select id="weight6" class="weightInput"></select></td>
+								</tr>
+
+								<tr>
+									<td><input type="text" id="course7" title="Enter a course name"></td>
+									<td><select id="credit7" class="creditInput"></select></td>
+									<td><select id="grade7" class="gradeInput"></select></td>
+									<td><select id="weight7" class="weightInput"></select></td>
+								</tr>
+
+								<tr>
+									<td><input type="text" id="course8" title="Enter a course name"></td>
+									<td><select id="credit8" class="creditInput"></select></td>
+									<td><select id="grade8" class="gradeInput"></select></td>
+									<td><select id="weight8" class="weightInput"></select></td>
+								</tr>
+							</tbody>
+							<tfoot>
+							   <tr>
+								  <td colspan="3">
+									 <h5>
+										<input type="button" value="Calculate" onclick="calculateGPA()"/><a href="help.html#q004" target="_new"  class="help">&nbsp;?&nbsp;</a>
+									 </h5>
+								  </td>
+							   </tr>
+							</tfoot>
+						</table>
+					</div>
+				<br>
+			</div>	
+		</div> <!-- section for form input left panel ends here-->
+	</form>
+		<div class="column w3-white"><!-- section for form report right panel starts here-->
+			<header class="w3-container w3-blue">
+				<h3>Your GPA Report</h3>
+			</header>
+			<div class="w3-container w3-white">
+
+				<div style="text-align: center">
+					<span id="stdDetailSpan"></span>
+				</div>
+				<br />
+				
+				<div>
+					<div id="UnweightedReportDetailSpan" style="display:none">
+					<h3>Unweighted Calculation</h3><hr>
+						<table  id="reportTable" class="reportTable">
+						   <thead>
+							  <tr>
+								 <th>Course</th>
+								 <th>Credit</th>
+								 <th>Grade</th>
+								 <th style="text-align:right">Grade Points</th>
+							  </tr>
+						   </thead>
+						   <tbody  id="reportTableBody"></tbody>
+						   <tfoot>
+							  <tr>
+								 <td colspan="4">&nbsp;</td>
+							  </tr>
+							  <tr>
+								 <td>Total Credits: </td>
+								 <td colspan="3" id="totalCreditRow"></td>
+							  </tr>
+							  <tr>
+								 <td colspan="4" id="overAllGpaRow"></td>
+							  </tr>
+						   </tfoot>
+						</table>					
+					</div>					
+				</div>
+				<br/>
+				<div>
+					<div id="WeightedReportDetailSpan" style="display:none">
+					<h3>Weighted Calculation</h3><hr>
+					<table  id="WReportTable" class="reportTable">
+					   <thead>
+						  <tr>
+							 <th>Course</th>
+							 <th>Credit</th>
+							 <th>Grade</th>
+							 <th style="text-align:right">Grade Points</th>
+						  </tr>
+					   </thead>
+					   <tbody  id="WReportTableBody"></tbody>
+					   <tfoot>
+						  <tr>
+							 <td colspan="4">&nbsp;</td>
+						  </tr>
+						  <tr>
+							 <td>Total Credits: </td>
+							 <td colspan="3" id="WR_totalCreditRow"></td>
+						  </tr>
+						  <tr>
+							 <td colspan="4" id="WR_overAllGpaRow"></td>
+						  </tr>
+					   </tfoot>
+					</table>					
+					</div>					
+				</div>
+				<br/>
+				<div id="printReportDiv" style="display:none">
+				<h5>
+					<input type="button" value="Print Your Report" onclick="window.print()">
+				</h5>
+				</div>
+			</div>	
+		</div><!-- section for form report right panel ends here-->
+	</div>
   </body>
 </html>

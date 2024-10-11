@@ -1,6 +1,1 @@
-- 👋 Hi, I’m Rhea Jha (@rheajharbhs)
-- 👀 I’m interested in programming html, css and javascript
-- 🌱 I'm currently writing simple gpa calculator for my school - Rock Bridge High School, Columbia, Missouri
-- This application calculates both weighted and unweighted
-- I have developed a simple working application.
-- I would like to learn how to scale this to add more semesters without duplicating my html
+
